@@ -1,0 +1,14 @@
+Item,Cost,Qty,Extended Cost,Link,Notes,Availability
+ESP32-WROOM-32E-N4,2.78,1,2.78,https://jlcpcb.com/partdetail/EspressifSystems-ESP32_WROOM_32EN4/C701341,Also available in 8MB version on Digikey. Need to download ESP32 kicad library from github and use ESP32-WROOM-E symbol,1.8K in stock @ JLC
+HT7833 3V3 LDO,0.28,1,0.28,https://jlcpcb.com/partdetail/HoltekSemicon-HT7833/C164106,"SOT89 footprint. On kicad, using AP2127R as placeholder symbol.",886 stock
+MMBT2222,0.01,0,0,https://jlcpcb.com/partdetail/Yongyutai-MMBT2222/C2891810,Not implementing.NPN transistor for autoreset. Kicad model @ https://www.digikey.ca/en/models/919595,
+SPST Pushbutton SMD,0.058,1,0.058,https://jlcpcb.com/partdetail/ck-PTS636SK25SMTRLFS/C2689642,For manual reset circuit.,767 stock
+MAX3483AEASA,2.28,1,2.28,https://jlcpcb.com/partdetail/279608-MAX3483AEASAT/C295057,3v3 RS485/UART translator with full duplex ,400 in stock @ JLC
+2N27002k,0.01,1,0.01,https://www.lcsc.com/product-detail/MOSFETs_Slkor-SLKORMICRO-Elec-2N7002_C350313.html,For disabling 5V sensor.,62k stock
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,,
+,,,,,Subtotal,5.408
