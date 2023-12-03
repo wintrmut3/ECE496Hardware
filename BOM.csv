@@ -7,7 +7,7 @@ MAX3483AEASA,2.28,1,2.28,https://jlcpcb.com/partdetail/279608-MAX3483AEASAT/C295
 2N27002k,0.01,1,0.01,https://www.lcsc.com/product-detail/MOSFETs_Slkor-SLKORMICRO-Elec-2N7002_C350313.html,For disabling 5V sensor.,62k stock
 ,,,,,,
 ,,,,,,
-Note: This BOM only includes components that required design decisions. SMD Passives like resistors and capacitors will be ordered in standard 0603 size for solderability should a workaround be required. Standard jumpers, JST XH and 0.100" pin connectors will also be ordered. ,,,,,,
+Note: This BOM only includes components that required design decisions. SMD Passives like resistors and capacitors will be ordered in standard 0603 size for solderability should a workaround be required. Standard jumpers, JST XH and 100mil pin connectors will also be ordered. ,,,,,,
 ,,,,,,
 ,,,,,,
 ,,,,,,
