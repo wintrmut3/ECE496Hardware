@@ -5,8 +5,8 @@ MMBT2222,0.01,0,0,https://jlcpcb.com/partdetail/Yongyutai-MMBT2222/C2891810,Not 
 SPST Pushbutton SMD,0.058,1,0.058,https://jlcpcb.com/partdetail/ck-PTS636SK25SMTRLFS/C2689642,For manual reset circuit.,767 stock
 MAX3483AEASA,2.28,1,2.28,https://jlcpcb.com/partdetail/279608-MAX3483AEASAT/C295057,3v3 RS485/UART translator with full duplex ,400 in stock @ JLC
 2N27002k,0.01,1,0.01,https://www.lcsc.com/product-detail/MOSFETs_Slkor-SLKORMICRO-Elec-2N7002_C350313.html,For disabling 5V sensor.,62k stock
-,,,,,,
-,,,,,,
+ Samsung Electro-Mechanics CL21A226MAYNNNE ,0.05,1,,https://www.lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_Samsung-Electro-Mechanics-CL21A226MAYNNNE_C602037.html,Bigger physical cap needed for large capacitance application,
+,0.2,1,,https://www.lcsc.com/product-detail/Female-Headers_DEALON-DW254R-22-20-85_C2935991.html,Female 2x10 pinheader for GPIO excess,
 Note: This BOM only includes components that required design decisions. SMD Passives like resistors and capacitors will be ordered in standard 0603 size for solderability should a workaround be required. Standard JST XH and 100mil pin connectors will also be ordered. ,,,,,,
 ,,,,,,
 ,,,,,,
