@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>C:\Users\echo\Documents\Projects\2023-2024\ECE496 capstone\hardware\esp32_sensor_node_pcb\esp32_sensor_node.kicad_sch</source>
-    <date>2023-12-02 10:00:30 PM</date>
+    <source>C:\Users\echo\Documents\Projects\2023-2024\ECE496\ECE496Hardware\esp32_sensor_node_pcb\esp32_sensor_node.kicad_sch</source>
+    <date>2023-12-26 8:33:53 PM</date>
     <tool>Eeschema 7.0.9</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -33,20 +33,9 @@
       <property name="ki_description" value="Unpolarized capacitor, small symbol"/>
       <property name="ki_keywords" value="capacitor cap"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>899b07a9-9160-4e6a-a949-2854f4023ea9</tstamps>
-    </comp>
-    <comp ref="C2">
-      <value>1uF</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
-      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
-      <property name="Sheetname" value=""/>
-      <property name="Sheetfile" value="esp32_sensor_node.kicad_sch"/>
-      <property name="ki_description" value="Unpolarized capacitor, small symbol"/>
-      <property name="ki_keywords" value="capacitor cap"/>
-      <sheetpath names="/" tstamps="/"/>
       <tstamps>49a71088-da54-404a-a495-abbc4c3025e5</tstamps>
     </comp>
-    <comp ref="C3">
+    <comp ref="C2">
       <value>2.2uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
@@ -57,9 +46,20 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>8ab1625e-e536-40c2-962a-1be13f85dda4</tstamps>
     </comp>
+    <comp ref="C3">
+      <value>0.1uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="esp32_sensor_node.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor, small symbol"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>02eac1ed-5cc0-4600-974b-85a9b1667ddd</tstamps>
+    </comp>
     <comp ref="C4">
       <value>22uF</value>
-      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <footprint>Capacitor_SMD:C_0805_2012Metric</footprint>
       <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="esp32_sensor_node.kicad_sch"/>
@@ -69,6 +69,17 @@
       <tstamps>a1e49837-03f7-449b-b0e5-c728650c7892</tstamps>
     </comp>
     <comp ref="C5">
+      <value>1uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="esp32_sensor_node.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor, small symbol"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8d6fa4e1-de8e-4179-a009-a7bdb7b137bf</tstamps>
+    </comp>
+    <comp ref="C6">
       <value>0.1uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
       <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
@@ -78,6 +89,17 @@
       <property name="ki_keywords" value="capacitor cap"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>32dca5cf-8162-4a0f-8964-3b913273129d</tstamps>
+    </comp>
+    <comp ref="C7_MAXDECOUP1">
+      <value>0.1uF</value>
+      <footprint>Capacitor_SMD:C_0603_1608Metric</footprint>
+      <libsource lib="Device" part="C_Small" description="Unpolarized capacitor, small symbol"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="esp32_sensor_node.kicad_sch"/>
+      <property name="ki_description" value="Unpolarized capacitor, small symbol"/>
+      <property name="ki_keywords" value="capacitor cap"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>63f71c95-f9c8-46e6-a346-d79da06f008c</tstamps>
     </comp>
     <comp ref="D1">
       <value>LED</value>
@@ -90,16 +112,60 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>80da7574-ee16-4ea0-9f57-9e635d8098b2</tstamps>
     </comp>
-    <comp ref="J1">
-      <value>Conn_02x10_Top_Bottom</value>
-      <footprint>Connector_PinSocket_2.54mm:PinSocket_2x10_P2.54mm_Vertical</footprint>
-      <libsource lib="Connector_Generic" part="Conn_02x10_Top_Bottom" description="Generic connector, double row, 02x10, top/bottom pin numbering scheme (row 1: 1...pins_per_row, row2: pins_per_row+1 ... num_pins), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+    <comp ref="H1">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="esp32_sensor_node.kicad_sch"/>
-      <property name="ki_description" value="Generic connector, double row, 02x10, top/bottom pin numbering scheme (row 1: 1...pins_per_row, row2: pins_per_row+1 ... num_pins), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="ki_description" value="Mounting Hole without connection"/>
+      <property name="ki_keywords" value="mounting hole"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b9fec035-5186-410c-9062-cdc8a036b485</tstamps>
+    </comp>
+    <comp ref="H2">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="esp32_sensor_node.kicad_sch"/>
+      <property name="ki_description" value="Mounting Hole without connection"/>
+      <property name="ki_keywords" value="mounting hole"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>acb88510-ff8c-4010-a80e-710dcfa90075</tstamps>
+    </comp>
+    <comp ref="H3">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="esp32_sensor_node.kicad_sch"/>
+      <property name="ki_description" value="Mounting Hole without connection"/>
+      <property name="ki_keywords" value="mounting hole"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a82bd003-3fd6-4c8f-832c-93324ba28803</tstamps>
+    </comp>
+    <comp ref="H4">
+      <value>MountingHole</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3</footprint>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="esp32_sensor_node.kicad_sch"/>
+      <property name="ki_description" value="Mounting Hole without connection"/>
+      <property name="ki_keywords" value="mounting hole"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>cbf83976-c85e-4b0a-90ce-4653f4ac9a4f</tstamps>
+    </comp>
+    <comp ref="J1">
+      <value>Conn_02x10_Odd_Even</value>
+      <footprint>Connector_PinSocket_2.54mm:PinSocket_2x10_P2.54mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_02x10_Odd_Even" description="Generic connector, double row, 02x10, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="esp32_sensor_node.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, double row, 02x10, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)"/>
       <property name="ki_keywords" value="connector"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>331cd361-49ac-4f61-a855-ec62729ec5ec</tstamps>
+      <tstamps>181a2568-9300-431d-9bf3-9ca89b582ccc</tstamps>
     </comp>
     <comp ref="JP1">
       <value>Jumper_LED_EN</value>
@@ -114,7 +180,7 @@
     </comp>
     <comp ref="JST_XH_AIR1">
       <value>Conn_01x03_Socket</value>
-      <footprint>Connector_JST:JST_XH_B3B-XH-AM_1x03_P2.50mm_Vertical</footprint>
+      <footprint>Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical</footprint>
       <libsource lib="Connector" part="Conn_01x03_Socket" description="Generic connector, single row, 01x03, script generated"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="esp32_sensor_node.kicad_sch"/>
@@ -125,7 +191,7 @@
     </comp>
     <comp ref="JST_XH_CC1">
       <value>Conn_01x05_Socket</value>
-      <footprint>Connector_JST:JST_XH_B5B-XH-AM_1x05_P2.50mm_Vertical</footprint>
+      <footprint>Connector_JST:JST_XH_B5B-XH-A_1x05_P2.50mm_Vertical</footprint>
       <libsource lib="Connector" part="Conn_01x05_Socket" description="Generic connector, single row, 01x05, script generated"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="esp32_sensor_node.kicad_sch"/>
@@ -136,7 +202,7 @@
     </comp>
     <comp ref="JST_XH_SOIL5V1">
       <value>Conn_01x04_Socket</value>
-      <footprint>Connector_JST:JST_XH_B4B-XH-AM_1x04_P2.50mm_Vertical</footprint>
+      <footprint>Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical</footprint>
       <libsource lib="Connector" part="Conn_01x04_Socket" description="Generic connector, single row, 01x04, script generated"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="esp32_sensor_node.kicad_sch"/>
@@ -147,7 +213,7 @@
     </comp>
     <comp ref="J_ACT_OUT1">
       <value>Conn_01x02_Socket</value>
-      <footprint>Connector_JST:JST_XH_B2B-XH-AM_1x02_P2.50mm_Vertical</footprint>
+      <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
       <libsource lib="Connector" part="Conn_01x02_Socket" description="Generic connector, single row, 01x02, script generated"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="esp32_sensor_node.kicad_sch"/>
@@ -158,7 +224,7 @@
     </comp>
     <comp ref="J_PROG1">
       <value>Conn_01x04_Socket</value>
-      <footprint>Connector_JST:JST_XH_B4B-XH-AM_1x04_P2.50mm_Vertical</footprint>
+      <footprint>Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical</footprint>
       <libsource lib="Connector" part="Conn_01x04_Socket" description="Generic connector, single row, 01x04, script generated"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="esp32_sensor_node.kicad_sch"/>
@@ -166,6 +232,17 @@
       <property name="ki_keywords" value="connector"/>
       <sheetpath names="/" tstamps="/"/>
       <tstamps>28df5e0f-eb7a-47da-af5c-c7cf4d9ed037</tstamps>
+    </comp>
+    <comp ref="J_PWRIN1">
+      <value>Conn_01x02_Socket</value>
+      <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Socket" description="Generic connector, single row, 01x02, script generated"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="esp32_sensor_node.kicad_sch"/>
+      <property name="ki_description" value="Generic connector, single row, 01x02, script generated"/>
+      <property name="ki_keywords" value="connector"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b09cae38-4f21-46c5-b3c9-528eddb9537b</tstamps>
     </comp>
     <comp ref="Q1">
       <value>2N7002K</value>
@@ -191,7 +268,7 @@
       <tstamps>ea18d64f-a145-43f8-a432-9e8dbc5a533e</tstamps>
     </comp>
     <comp ref="R2">
-      <value>500R</value>
+      <value>2.2K</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
       <libsource lib="Device" part="R" description="Resistor"/>
       <property name="Sheetname" value=""/>
@@ -224,16 +301,16 @@
       <tstamps>99fd8c04-3d99-4567-a3da-2f69f3d1bda1</tstamps>
     </comp>
     <comp ref="U1">
-      <value>HT7833</value>
-      <footprint>Package_TO_SOT_SMD:SOT-89-3</footprint>
-      <datasheet>https://www.diodes.com/assets/Datasheets/AP2127.pdf</datasheet>
-      <libsource lib="Regulator_Linear" part="AP2127R-3.3" description="300mA low dropout linear regulator, shutdown pin, 2.5V-6V input voltage, 3.3V fixed positive output, SOT-89 package"/>
+      <value>SPX3819M5-L-3-3</value>
+      <footprint>Package_TO_SOT_SMD:SOT-23-5</footprint>
+      <datasheet>https://www.exar.com/content/document.ashx?id=22106&amp;languageid=1033&amp;type=Datasheet&amp;partnumber=SPX3819&amp;filename=SPX3819.pdf&amp;part=SPX3819</datasheet>
+      <libsource lib="Regulator_Linear" part="SPX3819M5-L-3-3" description="500mA Low drop-out regulator, Fixed Output 3.3V, SOT-23-5"/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="esp32_sensor_node.kicad_sch"/>
-      <property name="ki_description" value="300mA low dropout linear regulator, shutdown pin, 2.5V-6V input voltage, 3.3V fixed positive output, SOT-89 package"/>
-      <property name="ki_keywords" value="linear regulator ldo fixed positive"/>
+      <property name="ki_description" value="500mA Low drop-out regulator, Fixed Output 3.3V, SOT-23-5"/>
+      <property name="ki_keywords" value="REGULATOR LDO 3.3V"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>75ad9255-e99a-462f-a4e3-9691ff586bd4</tstamps>
+      <tstamps>ddc3ed45-f570-407b-be09-28705371d094</tstamps>
     </comp>
     <comp ref="U2">
       <value>ESP32-WROOM-E</value>
@@ -330,15 +407,15 @@
         <pin num="5" name="Pin_5" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="Connector_Generic" part="Conn_02x10_Top_Bottom">
-      <description>Generic connector, double row, 02x10, top/bottom pin numbering scheme (row 1: 1...pins_per_row, row2: pins_per_row+1 ... num_pins), script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+    <libpart lib="Connector_Generic" part="Conn_02x10_Odd_Even">
+      <description>Generic connector, double row, 02x10, odd/even pin numbering scheme (row 1 odd numbers, row 2 even numbers), script generated (kicad-library-utils/schlib/autogen/connector/)</description>
       <docs>~</docs>
       <footprints>
         <fp>Connector*:*_2x??_*</fp>
       </footprints>
       <fields>
         <field name="Reference">J</field>
-        <field name="Value">Conn_02x10_Top_Bottom</field>
+        <field name="Value">Conn_02x10_Odd_Even</field>
         <field name="Datasheet">~</field>
       </fields>
       <pins>
@@ -456,6 +533,18 @@
         <pin num="8" name="VCC" type="power_in"/>
       </pins>
     </libpart>
+    <libpart lib="Mechanical" part="MountingHole">
+      <description>Mounting Hole without connection</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>MountingHole*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">MountingHole</field>
+        <field name="Datasheet">~</field>
+      </fields>
+    </libpart>
     <libpart lib="PCM_Espressif" part="ESP32-WROOM-E">
       <description>ESP32-WROOM-32E integrates ESP32-D0WD-V3, with higher stability and safety performance.</description>
       <docs>https://www.espressif.com/sites/default/files/documentation/esp32-wroom-32e_esp32-wroom-32ue_datasheet_en.pdf</docs>
@@ -500,22 +589,24 @@
         <pin num="39" name="GND_THERMAL" type="power_in"/>
       </pins>
     </libpart>
-    <libpart lib="Regulator_Linear" part="AP2127R-3.3">
-      <description>300mA low dropout linear regulator, shutdown pin, 2.5V-6V input voltage, 3.3V fixed positive output, SOT-89 package</description>
-      <docs>https://www.diodes.com/assets/Datasheets/AP2127.pdf</docs>
+    <libpart lib="Regulator_Linear" part="SPX3819M5-L-3-3">
+      <description>500mA Low drop-out regulator, Fixed Output 3.3V, SOT-23-5</description>
+      <docs>https://www.exar.com/content/document.ashx?id=22106&amp;languageid=1033&amp;type=Datasheet&amp;partnumber=SPX3819&amp;filename=SPX3819.pdf&amp;part=SPX3819</docs>
       <footprints>
-        <fp>SOT?89*</fp>
+        <fp>SOT?23*</fp>
       </footprints>
       <fields>
         <field name="Reference">U</field>
-        <field name="Value">AP2127R-3.3</field>
-        <field name="Footprint">Package_TO_SOT_SMD:SOT-89-3</field>
-        <field name="Datasheet">https://www.diodes.com/assets/Datasheets/AP2127.pdf</field>
+        <field name="Value">SPX3819M5-L-3-3</field>
+        <field name="Footprint">Package_TO_SOT_SMD:SOT-23-5</field>
+        <field name="Datasheet">https://www.exar.com/content/document.ashx?id=22106&amp;languageid=1033&amp;type=Datasheet&amp;partnumber=SPX3819&amp;filename=SPX3819.pdf&amp;part=SPX3819</field>
       </fields>
       <pins>
-        <pin num="1" name="GND" type="power_in"/>
-        <pin num="2" name="VI" type="power_in"/>
-        <pin num="3" name="VO" type="power_out"/>
+        <pin num="1" name="IN" type="power_in"/>
+        <pin num="2" name="GND" type="power_in"/>
+        <pin num="3" name="EN" type="input"/>
+        <pin num="4" name="BP" type="input"/>
+        <pin num="5" name="OUT" type="power_out"/>
       </pins>
     </libpart>
     <libpart lib="Switch" part="SW_DIP_x01">
@@ -566,6 +657,12 @@
     <library logical="Jumper">
       <uri>F:\Program Files\share\kicad\symbols\/Jumper.kicad_sym</uri>
     </library>
+    <library logical="MAX3483">
+      <uri>C:\Users\echo\Documents\Projects\2023-2024\ECE496\PCB\ul_MAX3483AEASA-\KiCADv6\2023-11-27_00-33-53.kicad_sym</uri>
+    </library>
+    <library logical="Mechanical">
+      <uri>F:\Program Files\share\kicad\symbols\/Mechanical.kicad_sym</uri>
+    </library>
     <library logical="PCM_Espressif">
       <uri>C:\Users\echo\Documents\KiCad\7.0\3rdparty/symbols/com_github_espressif_kicad-libraries/Espressif.kicad_sym</uri>
     </library>
@@ -580,25 +677,27 @@
     </library>
   </libraries>
   <nets>
-    <net code="1" name="3V3">
-      <node ref="C1" pin="1" pintype="passive"/>
+    <net code="1" name="+3.3V">
+      <node ref="C2" pin="1" pintype="passive"/>
       <node ref="C3" pin="1" pintype="passive"/>
       <node ref="C4" pin="1" pintype="passive"/>
+      <node ref="C7_MAXDECOUP1" pin="1" pintype="passive"/>
       <node ref="D1" pin="2" pinfunction="A" pintype="passive"/>
+      <node ref="J1" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J1" pin="4" pinfunction="Pin_4" pintype="passive"/>
       <node ref="JST_XH_AIR1" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="R1" pin="1" pintype="passive"/>
-      <node ref="R1" pin="2" pintype="passive"/>
-      <node ref="SW1" pin="2" pintype="passive"/>
-      <node ref="U1" pin="3" pinfunction="VO" pintype="power_out"/>
+      <node ref="U1" pin="5" pinfunction="OUT" pintype="power_out"/>
       <node ref="U2" pin="2" pinfunction="3V3" pintype="power_in"/>
-      <node ref="U2" pin="3" pinfunction="EN/CHIP_PU" pintype="input"/>
+      <node ref="U3" pin="8" pinfunction="VCC" pintype="power_in"/>
     </net>
-    <net code="2" name="5V">
-      <node ref="C2" pin="1" pintype="passive"/>
+    <net code="2" name="+5V">
+      <node ref="C1" pin="1" pintype="passive"/>
       <node ref="JST_XH_SOIL5V1" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="J_PROG1" pin="3" pinfunction="Pin_3" pintype="passive"/>
-      <node ref="U1" pin="2" pinfunction="VI" pintype="power_in"/>
-      <node ref="U3" pin="8" pinfunction="VCC" pintype="power_in"/>
+      <node ref="J_PWRIN1" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="U1" pin="1" pinfunction="IN" pintype="power_in"/>
+      <node ref="U1" pin="3" pinfunction="EN" pintype="input"/>
     </net>
     <net code="3" name="ACT_IN">
       <node ref="JST_XH_CC1" pin="1" pinfunction="Pin_1" pintype="passive"/>
@@ -610,24 +709,25 @@
       <node ref="C3" pin="2" pintype="passive"/>
       <node ref="C4" pin="2" pintype="passive"/>
       <node ref="C5" pin="2" pintype="passive"/>
-      <node ref="J1" pin="11" pinfunction="Pin_11" pintype="passive"/>
+      <node ref="C6" pin="2" pintype="passive"/>
+      <node ref="C7_MAXDECOUP1" pin="2" pintype="passive"/>
+      <node ref="J1" pin="10" pinfunction="Pin_10" pintype="passive"/>
       <node ref="J1" pin="12" pinfunction="Pin_12" pintype="passive"/>
-      <node ref="J1" pin="13" pinfunction="Pin_13" pintype="passive"/>
       <node ref="J1" pin="14" pinfunction="Pin_14" pintype="passive"/>
-      <node ref="J1" pin="15" pinfunction="Pin_15" pintype="passive"/>
       <node ref="J1" pin="16" pinfunction="Pin_16" pintype="passive"/>
-      <node ref="J1" pin="17" pinfunction="Pin_17" pintype="passive"/>
       <node ref="J1" pin="18" pinfunction="Pin_18" pintype="passive"/>
-      <node ref="J1" pin="19" pinfunction="Pin_19" pintype="passive"/>
       <node ref="J1" pin="20" pinfunction="Pin_20" pintype="passive"/>
+      <node ref="J1" pin="6" pinfunction="Pin_6" pintype="passive"/>
+      <node ref="J1" pin="8" pinfunction="Pin_8" pintype="passive"/>
       <node ref="JP1" pin="1" pinfunction="A" pintype="passive"/>
       <node ref="JST_XH_AIR1" pin="3" pinfunction="Pin_3" pintype="passive"/>
       <node ref="J_ACT_OUT1" pin="2" pinfunction="Pin_2" pintype="passive"/>
       <node ref="J_PROG1" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="J_PWRIN1" pin="2" pinfunction="Pin_2" pintype="passive"/>
       <node ref="Q1" pin="2" pinfunction="S" pintype="passive"/>
       <node ref="SW1" pin="1" pintype="passive"/>
       <node ref="SW2" pin="1" pintype="passive"/>
-      <node ref="U1" pin="1" pinfunction="GND" pintype="power_in"/>
+      <node ref="U1" pin="2" pinfunction="GND" pintype="power_in"/>
       <node ref="U2" pin="1" pinfunction="GND" pintype="power_in"/>
       <node ref="U2" pin="15" pinfunction="GND" pintype="passive"/>
       <node ref="U2" pin="38" pinfunction="GND" pintype="passive"/>
@@ -635,7 +735,7 @@
       <node ref="U3" pin="5" pinfunction="GND" pintype="power_out"/>
     </net>
     <net code="5" name="GPIO0{slash}BOOT">
-      <node ref="C5" pin="1" pintype="passive"/>
+      <node ref="C6" pin="1" pintype="passive"/>
       <node ref="SW2" pin="2" pintype="passive"/>
       <node ref="U2" pin="25" pinfunction="GPIO0/BOOT/ADC2_CH1" pintype="bidirectional"/>
     </net>
@@ -643,43 +743,43 @@
       <node ref="U2" pin="24" pinfunction="ADC2_CH2/GPIO2" pintype="bidirectional"/>
     </net>
     <net code="7" name="GPIO13">
-      <node ref="J1" pin="6" pinfunction="Pin_6" pintype="passive"/>
+      <node ref="J1" pin="1" pinfunction="Pin_1" pintype="passive"/>
       <node ref="U2" pin="16" pinfunction="MTCK/GPIO13/ADC2_CH4" pintype="bidirectional"/>
     </net>
     <net code="8" name="GPIO18">
-      <node ref="J1" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J1" pin="3" pinfunction="Pin_3" pintype="passive"/>
       <node ref="U2" pin="30" pinfunction="GPIO18" pintype="bidirectional"/>
     </net>
     <net code="9" name="GPIO19">
-      <node ref="J1" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J1" pin="5" pinfunction="Pin_5" pintype="passive"/>
       <node ref="U2" pin="31" pinfunction="GPIO19" pintype="bidirectional"/>
     </net>
     <net code="10" name="GPIO21">
-      <node ref="J1" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="J1" pin="7" pinfunction="Pin_7" pintype="passive"/>
       <node ref="U2" pin="33" pinfunction="GPIO21" pintype="bidirectional"/>
     </net>
     <net code="11" name="GPIO23">
-      <node ref="J1" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="J1" pin="9" pinfunction="Pin_9" pintype="passive"/>
       <node ref="U2" pin="37" pinfunction="GPIO23" pintype="bidirectional"/>
     </net>
     <net code="12" name="GPIO26">
-      <node ref="J1" pin="5" pinfunction="Pin_5" pintype="passive"/>
+      <node ref="J1" pin="11" pinfunction="Pin_11" pintype="passive"/>
       <node ref="U2" pin="11" pinfunction="DAC_2/ADC2_CH9/GPIO26" pintype="bidirectional"/>
     </net>
     <net code="13" name="GPIO34">
-      <node ref="J1" pin="7" pinfunction="Pin_7" pintype="passive"/>
+      <node ref="J1" pin="13" pinfunction="Pin_13" pintype="passive"/>
       <node ref="U2" pin="6" pinfunction="GPIO34/ADC1_CH6" pintype="input"/>
     </net>
     <net code="14" name="GPIO35">
-      <node ref="J1" pin="8" pinfunction="Pin_8" pintype="passive"/>
+      <node ref="J1" pin="15" pinfunction="Pin_15" pintype="passive"/>
       <node ref="U2" pin="7" pinfunction="GPIO35/ADC1_CH7" pintype="input"/>
     </net>
     <net code="15" name="GPIO36">
-      <node ref="J1" pin="9" pinfunction="Pin_9" pintype="passive"/>
+      <node ref="J1" pin="17" pinfunction="Pin_17" pintype="passive"/>
       <node ref="U2" pin="4" pinfunction="SENSOR_VP/GPIO36/ADC1_CH0" pintype="input"/>
     </net>
     <net code="16" name="GPIO39">
-      <node ref="J1" pin="10" pinfunction="Pin_10" pintype="passive"/>
+      <node ref="J1" pin="19" pinfunction="Pin_19" pintype="passive"/>
       <node ref="U2" pin="5" pinfunction="SENSOR_VN/GPIO39/ADC1_CH3" pintype="input"/>
     </net>
     <net code="17" name="Net-(D1-K)">
@@ -696,11 +796,11 @@
     </net>
     <net code="20" name="Net-(JST_XH_SOIL5V1-Pin_2)">
       <node ref="JST_XH_SOIL5V1" pin="2" pinfunction="Pin_2" pintype="passive"/>
-      <node ref="U3" pin="7" pinfunction="B" pintype="unspecified"/>
+      <node ref="U3" pin="6" pinfunction="A" pintype="unspecified"/>
     </net>
     <net code="21" name="Net-(JST_XH_SOIL5V1-Pin_3)">
       <node ref="JST_XH_SOIL5V1" pin="3" pinfunction="Pin_3" pintype="passive"/>
-      <node ref="U3" pin="6" pinfunction="A" pintype="unspecified"/>
+      <node ref="U3" pin="7" pinfunction="B" pintype="unspecified"/>
     </net>
     <net code="22" name="Net-(JST_XH_SOIL5V1-Pin_4)">
       <node ref="JST_XH_SOIL5V1" pin="4" pinfunction="Pin_4" pintype="passive"/>
@@ -734,25 +834,34 @@
       <node ref="JST_XH_CC1" pin="4" pinfunction="Pin_4" pintype="passive"/>
       <node ref="U2" pin="29" pinfunction="GPIO5" pintype="bidirectional"/>
     </net>
-    <net code="30" name="RS485_*RE">
+    <net code="30" name="RESET">
+      <node ref="C5" pin="1" pintype="passive"/>
+      <node ref="R1" pin="2" pintype="passive"/>
+      <node ref="SW1" pin="2" pintype="passive"/>
+      <node ref="U2" pin="3" pinfunction="EN/CHIP_PU" pintype="input"/>
+    </net>
+    <net code="31" name="RS485_*RE">
       <node ref="U2" pin="23" pinfunction="MTDO/GPIO15/ADC2_CH3" pintype="bidirectional"/>
       <node ref="U3" pin="2" pinfunction="*RE" pintype="unspecified"/>
     </net>
-    <net code="31" name="RX_CC">
+    <net code="32" name="RX_CC">
       <node ref="JST_XH_CC1" pin="3" pinfunction="Pin_3" pintype="passive"/>
       <node ref="U2" pin="14" pinfunction="MTDI/GPIO12/ADC2_CH5" pintype="bidirectional"/>
     </net>
-    <net code="32" name="SENSOR_EN">
+    <net code="33" name="SENSOR_EN">
       <node ref="Q1" pin="1" pinfunction="G" pintype="input"/>
       <node ref="U2" pin="10" pinfunction="DAC_1/ADC2_CH8/GPIO25" pintype="bidirectional"/>
     </net>
-    <net code="33" name="TX_CC">
+    <net code="34" name="TX_CC">
       <node ref="JST_XH_CC1" pin="2" pinfunction="Pin_2" pintype="passive"/>
       <node ref="U2" pin="13" pinfunction="MTMS/GPIO14/ADC2_CH6" pintype="bidirectional"/>
     </net>
-    <net code="34" name="WKP">
+    <net code="35" name="WKP">
       <node ref="JST_XH_CC1" pin="5" pinfunction="Pin_5" pintype="passive"/>
       <node ref="U2" pin="12" pinfunction="ADC2_CH7/GPIO27" pintype="bidirectional"/>
+    </net>
+    <net code="36" name="unconnected-(U1-BP-Pad4)">
+      <node ref="U1" pin="4" pinfunction="BP" pintype="input"/>
     </net>
   </nets>
 </export>
