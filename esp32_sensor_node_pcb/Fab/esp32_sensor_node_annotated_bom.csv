@@ -1,0 +1,20 @@
+Comment,Designator,Footprint,LCSC,Notes,Basic?
+1uF,"C1,C5",Capacitor_SMD:C_0603_1608Metric,C15849 ,50V 1uF X5R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS ,Y
+2.2uF,C2,Capacitor_SMD:C_0805_2012Metric,C377773 ,50V 2.2uF X5R ±10% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS ,Y
+0.1uF,"C3,C6,C7_MAXDECOUP1",Capacitor_SMD:C_0603_1608Metric,C14663 ,50V 100nF X7R ±10% 0603 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS ,Y
+22uF,C4,Capacitor_SMD:C_0805_2012Metric,C45783 ,25V 22uF X5R ±20% 0805 Multilayer Ceramic Capacitors MLCC - SMD/SMT ROHS ,Y
+LED,D1,LED_SMD:LED_0603_1608Metric,C2286 ,-40℃~+85℃ Red 0603 Light Emitting Diodes (LED) ROHS ,Y
+Conn_02x10_Odd_Even,J1,Connector_PinSocket_2.54mm:PinSocket_2x10_P2.54mm_Vertical,C5116528 ,"Straight Plugin,P=2.54mm Female Headers ROHS ",N
+Jumper_LED_EN,JP1,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical,C492401 ,"Straight Square Pins 2.5mm 2P 6mm -40℃~+105℃ 3mm 2.54mm Plugin Black Brass 1x2P Plugin,P=2.54mm Pin Headers ROHS ",N
+Conn_01x03_Socket,JST_XH_AIR1,Connector_JST:JST_XH_B3B-XH-A_1x03_P2.50mm_Vertical,C144394 ,"1x3P XH 1 2.5mm 3 Brass Plugin,P=2.5mm Wire To Board / Wire To Wire Connector ROHS ",N
+Conn_01x05_Socket,JST_XH_CC1,Connector_JST:JST_XH_B5B-XH-A_1x05_P2.50mm_Vertical,C157991 ,"1x5P XH 1 2.5mm 5 Brass Plugin,P=2.5mm Wire To Board / Wire To Wire Connector ROHS ",N
+Conn_01x04_Socket,JST_XH_SOIL5V1,Connector_JST:JST_XH_B4B-XH-A_1x04_P2.50mm_Vertical,C144395 ,"1x4P XH 1 2.5mm 4 Brass Plugin,P=2.5mm Wire To Board / Wire To Wire Connector ROHS ",N
+Conn_01x02_Socket,"J_ACT_OUT1,J_PWRIN1",Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical,C158012 ,"1x2P XH 1 2.5mm 2 Brass Plugin,P=2.5mm Wire To Board / Wire To Wire Connector ROHS ",N
+Conn_01x04_Socket,J_PROG1,Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical,C5116530 ,"2mm 2.54mm Plugin 2.5A 4P -40℃~+105℃ Straight 1x4P Top 8.5mm Square Hole Plugin,P=2.54mm Female Headers ROHS ",N
+2N7002K,Q1,Package_TO_SOT_SMD:SOT-23,C2910165 ,"60V 340mA 0.35W 0.9Ω@10V,500mA N Channel SOT-23 MOSFETs ROHS ",N
+10K,R1,Resistor_SMD:R_0603_1608Metric,C25804 ,100mW Thick Film Resistors ±100ppm/℃ ±1% 10kΩ 0603 Chip Resistor - Surface Mount ROHS ,Y
+2.2K,R2,Resistor_SMD:R_0603_1608Metric,C4190 ,100mW Thick Film Resistors ±100ppm/℃ ±1% 2.2kΩ 0603 Chip Resistor - Surface Mount ROHS ,Y
+SW_DIP_x01,"SW1,SW2",Button_Switch_SMD:SW_Tactile_SPST_NO_Straight_CK_PTS636Sx25SMTRLFS,C2689642 ,0.05A Brick nogging SPST - NO 250gf 12V - Tactile Switches ROHS ,N
+SPX3819M5-L-3-3,U1,Package_TO_SOT_SMD:SOT-23-5,C9055 ,500mA 70dB Fixed 3.3V Positive 16V SOT-23-5 Linear Voltage Regulators (LDO) ROHS ,N
+ESP32-WROOM-E,U2,PCM_Espressif:ESP32-WROOM-32E,C701341 ,"ESP32-WROOM-32E-N4 .... SMD,18x25.5mm WiFi Modules ROHS ",N
+MAX3483AEASA+,U3,MAX3483:21-0041B_8_MXM,C295057 ,MAX3483AEASA+T .... transceiver 250Kbps 1/1 SO-8 RS-485/RS-422 ICs ROHS ,N
