@@ -52,7 +52,7 @@
 //Timeout Configuration
 #define uS_TO_S_MULTIPLIER 1000000  
 #define TIMEOUT_LIGHT_SLEEP  60 //change TIMEOUT_LIGHT_SLEEP for setting timeout in secs 
-#define SENSOR_TIMEOUT 3000
+#define SENSOR_TIMEOUT 15000
 
 
 // Create instances of OneWire and DallasTemperature classes
@@ -126,7 +126,7 @@ void disableMAX485()
 void enableMAX485()
 {
     pinMode(RS485_RE,INPUT_PULLDOWN);
-    pinMode(RS485_GRD,INPUT_PULLDOWN);
+    pinMode(RS485_GRD,INPUT_PULLUP); // should be pullup, for some reason this code is PD
     pinMode(RS485_DE,INPUT_PULLDOWN);
 }
 
@@ -184,7 +184,9 @@ uint8_t datacollect(float *humidity, float *soilTemperature, float *conductivity
 {
   // enabling the sensor and IC
   enableMAX485();
+  delay(300);
   enableSensor();
+  delay(300);
 
   // Collecting Dallas OneWire Temperature Sensor Data
   sensors.requestTemperatures(); 
@@ -222,6 +224,7 @@ uint8_t datacollect(float *humidity, float *soilTemperature, float *conductivity
   }
 
   disableSensor();
+  delay(500);
   disableMAX485();
   if(result==0)return 1;
   else return 0;
@@ -283,6 +286,10 @@ void sensor_init()
 
 void preTransmission()
 {
+  Serial.println("DE_HIGH");
+  pinMode(RS485_DE, OUTPUT);
+  digitalWrite(RS485_DE, HIGH);
+  delay(100);
   pinMode(RS485_DE, INPUT_PULLUP);
   pinMode(RS485_RE, INPUT_PULLUP);
   
@@ -312,16 +319,17 @@ void postTransmission()
 
 void setup() {
   SerialPort.begin(9600, SERIAL_8N1, ccRx, ccTx);
-  pinMode(LED_BUILTIN, OUTPUT);
   pinMode(32, OUTPUT); // Actuation transistor output
-  digitalWrite(LED_BUILTIN, HIGH);
   delay(100);
-  Serial.begin(9600);
-  delay(100);
+  Serial.begin(115200);
+  delay(300);
   sensor_init();
   delay(100);
   esp_sleep_config_low_power();
   check_wakeup_reason();
+
+  // should disable max chip on startup;
+  disableMAX485();
   
   //If u get the freertos error for out of stack memory increase the stack size here
   xTaskCreatePinnedToCore(TransmitLocalData,"Communication",2048,NULL,1,&xTransmissionTask,0);
