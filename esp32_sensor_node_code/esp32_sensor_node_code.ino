@@ -47,7 +47,7 @@
 #define RS485_Rx 16
 #define RS485_Tx 17
 #define actuateWakeUp 33
-#define SAMPLE_SIZE 16 //size of the datapacket to be sent at once, so that data is not lost in fragmentation
+#define SAMPLE_SIZE 32 //size of the datapacket to be sent at once, so that data is not lost in fragmentation
 
 //Timeout Configuration
 #define uS_TO_S_MULTIPLIER 1000000  
@@ -180,7 +180,7 @@ void send_esp_to_light_sleep()
 }
 
 // User Defined function to collect data from sensors
-uint8_t datacollect(float *humidity, float *soilTemperature, float *conductivity,float *temperature) 
+uint8_t datacollect(float *humidity, float *soilTemperature, float *conductivity,float *temperature, float *pH, float *nitrogen, float *potassium, float *phosphorus) 
 {
   // enabling the sensor and IC
   enableMAX485();
@@ -201,12 +201,16 @@ uint8_t datacollect(float *humidity, float *soilTemperature, float *conductivity
   unsigned long start=millis();
   while((unsigned long)(millis()-start)<SENSOR_TIMEOUT)//check if the sensor has booted and has collected the data or timeout
   {
-    result = node.readHoldingRegisters(0x0000, 3);
+    result = node.readHoldingRegisters(0x0000, 7);
     if (result == node.ku8MBSuccess)
     {
       *humidity = ((float)node.getResponseBuffer(0x00)) * ((float)0.1);
       *soilTemperature = ((float)node.getResponseBuffer(0x01)) * ((float)0.1);
       *conductivity = ((float)node.getResponseBuffer(0x02));
+      *pH = ((float)node.getResponseBuffer(0x03))/10;
+      *nitrogen = ((float)node.getResponseBuffer(0x04));
+      *phosphorus = ((float)node.getResponseBuffer(0x05));
+      *potassium = ((float)node.getResponseBuffer(0x06));
       
       if(*soilTemperature>0)
       {
@@ -290,14 +294,15 @@ void preTransmission()
   pinMode(RS485_DE, OUTPUT);
   digitalWrite(RS485_DE, HIGH);
   delay(100);
-  pinMode(RS485_DE, INPUT_PULLUP);
+  // pinMode(RS485_DE, INPUT_PULLUP);
   pinMode(RS485_RE, INPUT_PULLUP);
   
 }
 
 void postTransmission()
 {
-  pinMode(RS485_RE, INPUT_PULLDOWN);
+  pinMode(RS485_RE, OUTPUT);
+  digitalWrite(RS485_RE, LOW);
   pinMode(RS485_DE, INPUT_PULLDOWN);
 
   delay(500);
@@ -420,27 +425,43 @@ void CollectLocalData(void * pvParameters)
           {
             if(isCollectionPhase){
             
-                float hum,temp,cond,stemp;
+                float hum,temp,cond,stemp,pH,nitrogen, phosphorus, potassium;
                 hum=0;
                 temp=0;
                 stemp=0;
                 cond=0;
+                pH=0;
+                nitrogen=0;
+                phosphorus=0;
+                potassium=0;
 
-                if(datacollect(&hum, &stemp, &cond,&temp)){
-                    Serial.print("Sending Sensor Data to queue [H sT C T]: ");
+                if(datacollect(&hum, &stemp, &cond, &temp, &pH, &nitrogen, &phosphorus, &potassium)){
+                    Serial.print("Sending Sensor Data to queue [H sT C T pH N P K]: ");
                     Serial.print(hum);
                     Serial.print(" ");
                     Serial.print(stemp);
                     Serial.print(" ");
                     Serial.print(cond);
                     Serial.print(" ");
-                    Serial.println(temp);
+                    Serial.print(temp);
+                    Serial.print(" ");
+                    Serial.print(pH);
+                    Serial.print(" ");
+                    Serial.print(nitrogen);
+                    Serial.print(" ");
+                    Serial.print(phosphorus);
+                    Serial.print(" ");
+                    Serial.println(potassium);
                     Serial.flush();
                     xQueueSendToBack(msg_queue, &hum, (TickType_t)0);
                     xQueueSendToBack(msg_queue, &stemp, (TickType_t)0);
                     xQueueSendToBack(msg_queue, &cond, (TickType_t)0);
                     xQueueSendToBack(msg_queue, &temp, (TickType_t)0);
-                    dataBufferSize+=16;
+                    xQueueSendToBack(msg_queue, &pH, (TickType_t)0);
+                    xQueueSendToBack(msg_queue, &nitrogen, (TickType_t)0);
+                    xQueueSendToBack(msg_queue, &phosphorus, (TickType_t)0);
+                    xQueueSendToBack(msg_queue, &potassium, (TickType_t)0);
+                    dataBufferSize+=32;
                     break;
                 }
             
