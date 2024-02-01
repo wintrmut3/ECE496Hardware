@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="box_layout_field.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.24748737"
+     inkscape:cx="1121.4463"
+     inkscape:cy="1373.6232"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1346"
+     inkscape:window-height="1041"
+     inkscape:window-x="234"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#2d2d2d;fill-opacity:1;stroke:none;stroke-width:0.665001;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect934"
+       width="77.67411"
+       height="15.308036"
+       x="49.892857"
+       y="9.0714283" />
+    <rect
+       style="fill:#dc0000;fill-opacity:1;stroke:none;stroke-width:0.540425;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect930"
+       width="33.007786"
+       height="37.03904"
+       x="146.19644"
+       y="131.41867" />
+    <rect
+       style="fill:#ffffff;stroke:#2d2d2d;stroke-width:1.17109;stroke-linecap:round;stroke-linejoin:bevel"
+       id="rect833"
+       width="148.68892"
+       height="97.888916"
+       x="38.723839"
+       y="-140.05785"
+       transform="rotate(90)" />
+    <rect
+       style="fill:#009900;stroke:none;stroke-width:0.624887;stroke-linecap:round;stroke-linejoin:bevel;fill-opacity:1"
+       id="rect835"
+       width="64.375114"
+       height="64.375107"
+       x="42.652153"
+       y="-110.20508"
+       transform="rotate(90)" />
+    <rect
+       style="fill:#32ab00;fill-opacity:1;stroke:none;stroke-width:0.52654;stroke-linecap:round;stroke-linejoin:bevel"
+       id="rect837"
+       width="59.473461"
+       height="49.473461"
+       x="121.98203"
+       y="-97.39241"
+       transform="rotate(90)" />
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;line-height:1.25;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono';stroke-width:0.264583"
+       x="22.45064"
+       y="34.769596"
+       id="text841"><tspan
+         sodipodi:role="line"
+         id="tspan839"
+         x="22.45064"
+         y="34.769596"
+         style="stroke-width:0.264583">Box - 149H x 99W x 71D </tspan><tspan
+         sodipodi:role="line"
+         x="22.45064"
+         y="47.998722"
+         style="stroke-width:0.264583"
+         id="tspan867" /></text>
+    <rect
+       style="fill:#0e232e;fill-opacity:1;stroke:none;stroke-width:0.341547;stroke-linecap:round;stroke-linejoin:bevel"
+       id="rect843"
+       width="19.758453"
+       height="62.658455"
+       x="-136.74973"
+       y="-182.58182"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#005c94;fill-opacity:1;stroke:#2d2d2d;stroke-width:0.259569;stroke-linecap:round;stroke-linejoin:bevel"
+       id="rect845"
+       width="26.740433"
+       height="26.740431"
+       x="-138.20447"
+       y="-69.676048"
+       transform="scale(-1)" />
+    <rect
+       style="fill:#0e232e;fill-opacity:1;stroke:#2d2d2d;stroke-width:0.185523;stroke-linecap:round;stroke-linejoin:bevel"
+       id="rect847"
+       width="22.435493"
+       height="16.281467"
+       x="-136.052"
+       y="-61.369556"
+       transform="scale(-1)" />
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;line-height:1.25;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono';stroke-width:0.264583;fill:#ffffff;"
+       x="115.09375"
+       y="55.845982"
+       id="text851"><tspan
+         sodipodi:role="line"
+         id="tspan849"
+         x="115.09375"
+         y="55.845982"
+         style="stroke-width:0.264583;fill:#ffffff;">log</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;line-height:1.25;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono';fill:#ffffff;stroke-width:0.264583"
+       x="54.145088"
+       y="65.76786"
+       id="text855"><tspan
+         sodipodi:role="line"
+         id="tspan853"
+         x="54.145088"
+         y="65.76786"
+         style="fill:#ffffff;stroke-width:0.264583">cc node</tspan><tspan
+         sodipodi:role="line"
+         x="54.145088"
+         y="78.996986"
+         style="fill:#ffffff;stroke-width:0.264583"
+         id="tspan863">pcb</tspan><tspan
+         sodipodi:role="line"
+         x="54.145088"
+         y="92.226112"
+         style="fill:#ffffff;stroke-width:0.264583"
+         id="tspan865">65x65</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;line-height:1.25;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono';fill:#ffffff;stroke-width:0.264583"
+       x="54.334076"
+       y="142.875"
+       id="text859"><tspan
+         sodipodi:role="line"
+         id="tspan857"
+         x="54.334076"
+         y="142.875"
+         style="fill:#ffffff;stroke-width:0.264583">esp32</tspan><tspan
+         sodipodi:role="line"
+         x="54.334076"
+         y="156.10413"
+         style="fill:#ffffff;stroke-width:0.264583"
+         id="tspan861">pcb</tspan><tspan
+         sodipodi:role="line"
+         x="54.334076"
+         y="169.33325"
+         style="fill:#ffffff;stroke-width:0.264583"
+         id="tspan873">50x60</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;line-height:1.25;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono';stroke-width:0.264583;fill:#ffffff;"
+       x="54.255714"
+       y="20.476198"
+       id="text871"><tspan
+         sodipodi:role="line"
+         id="tspan869"
+         x="54.255714"
+         y="20.476198"
+         style="stroke-width:0.264583;fill:#ffffff;">Units in mm</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.48351px;line-height:1.25;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono';fill:#ffffff;stroke-width:0.187088"
+       x="118.23281"
+       y="138.84703"
+       id="text881"><tspan
+         sodipodi:role="line"
+         x="118.23281"
+         y="138.84703"
+         style="fill:#ffffff;stroke-width:0.187088"
+         id="tspan888">4AA</tspan><tspan
+         sodipodi:role="line"
+         x="118.23281"
+         y="148.20142"
+         style="fill:#ffffff;stroke-width:0.187088"
+         id="tspan908" /><tspan
+         sodipodi:role="line"
+         x="118.23281"
+         y="157.5558"
+         style="fill:#ffffff;stroke-width:0.187088"
+         id="tspan890">21</tspan><tspan
+         sodipodi:role="line"
+         x="118.23281"
+         y="166.91019"
+         style="fill:#ffffff;stroke-width:0.187088"
+         id="tspan892">x59</tspan><tspan
+         sodipodi:role="line"
+         x="118.23281"
+         y="176.26459"
+         style="fill:#ffffff;stroke-width:0.187088"
+         id="tspan904">x63D</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.19789px;line-height:1.25;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono';fill:#ffffff;stroke-width:0.179947"
+       x="114.77319"
+       y="68.241051"
+       id="text896"><tspan
+         sodipodi:role="line"
+         id="tspan894"
+         x="114.77319"
+         y="68.241051"
+         style="fill:#ffffff;stroke-width:0.179947">27x27</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.36359px;line-height:1.25;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono';stroke-width:0.18409"
+       x="147.31219"
+       y="138.57811"
+       id="text912"><tspan
+         sodipodi:role="line"
+         x="147.31219"
+         y="138.57811"
+         style="stroke-width:0.18409"
+         id="tspan918">Cable</tspan><tspan
+         sodipodi:role="line"
+         x="147.31219"
+         y="147.78259"
+         style="stroke-width:0.18409"
+         id="tspan922">Routing </tspan><tspan
+         sodipodi:role="line"
+         x="147.31219"
+         y="156.98709"
+         style="stroke-width:0.18409"
+         id="tspan924">Blocked</tspan><tspan
+         sodipodi:role="line"
+         x="147.31219"
+         y="166.19157"
+         style="stroke-width:0.18409"
+         id="tspan932">Here</tspan></text>
+    <rect
+       style="fill:#dc0000;fill-opacity:1;stroke:none;stroke-width:0.619642;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect928"
+       width="3.5278482"
+       height="68.602676"
+       x="138.22803"
+       y="116.79464" />
+    <rect
+       style="fill:#dc0000;fill-opacity:1;stroke:none;stroke-width:0.430125;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect938"
+       width="3.5278482"
+       height="33.055828"
+       x="138.62894"
+       y="41.898369" />
+    <rect
+       style="fill:#dc0000;fill-opacity:1;stroke:none;stroke-width:0.540425;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect940"
+       width="33.007786"
+       height="37.03904"
+       x="146.19644"
+       y="41.838314" />
+    <text
+       xml:space="preserve"
+       style="font-size:7.36359px;line-height:1.25;font-family:'JetBrains Mono';-inkscape-font-specification:'JetBrains Mono';stroke-width:0.18409"
+       x="147.31219"
+       y="48.997753"
+       id="text950"><tspan
+         sodipodi:role="line"
+         x="147.31219"
+         y="48.997753"
+         style="stroke-width:0.18409"
+         id="tspan942">Cable</tspan><tspan
+         sodipodi:role="line"
+         x="147.31219"
+         y="58.202236"
+         style="stroke-width:0.18409"
+         id="tspan944">Routing </tspan><tspan
+         sodipodi:role="line"
+         x="147.31219"
+         y="67.406731"
+         style="stroke-width:0.18409"
+         id="tspan946">Blocked</tspan><tspan
+         sodipodi:role="line"
+         x="147.31219"
+         y="76.611214"
+         style="stroke-width:0.18409"
+         id="tspan948">Here</tspan></text>
+  </g>
+</svg>
