@@ -48,6 +48,8 @@
 #define RS485_Tx 17
 #define actuateWakeUp 33
 #define SAMPLE_SIZE 32 //size of the datapacket to be sent at once, so that data is not lost in fragmentation
+#define AIR_TEMP 1
+#define ACTUATE_INTENT 0xFF
 
 //Timeout Configuration
 #define uS_TO_S_MULTIPLIER 1000000  
@@ -109,7 +111,7 @@ void send_bytes(void *val,int packet_size)
       Serial.print(".");
       i++;
     }
-      Serial.println();
+    Serial.println();
     SerialPort.write(byte_ptr,packet_size);
     SerialPort.flush();
 
@@ -188,9 +190,14 @@ uint8_t datacollect(float *humidity, float *soilTemperature, float *conductivity
   enableSensor();
   delay(300);
 
-  // Collecting Dallas OneWire Temperature Sensor Data
-  sensors.requestTemperatures(); 
-  *temperature=((float)sensors.getTempCByIndex(0));
+  if(AIR_TEMP) {
+    // Collecting Dallas OneWire Temperature Sensor Data
+      sensors.requestTemperatures(); 
+    *temperature=((float)sensors.getTempCByIndex(0));
+  }
+  else {
+    *temperature = 0;
+  }
   
 
 
@@ -325,13 +332,33 @@ void postTransmission()
 void setup() {
   SerialPort.begin(9600, SERIAL_8N1, ccRx, ccTx);
   pinMode(32, OUTPUT); // Actuation transistor output
-  delay(100);
+  // delay(100);
   Serial.begin(115200);
+  unsigned long startTime = millis();
+  uint8_t myIntent;
+  Serial.println("Before Reading Intent");
+  while((unsigned long)(millis()-startTime) < 5000) {
+    // Serial.print("time: ");
+    // Serial.println(millis()-startTime);
+    if(SerialPort.available()) {
+      myIntent = (byte)SerialPort.read();
+      Serial.print("Intent: ");
+      Serial.println(myIntent, HEX);
+      break;
+    }
+    delay(10);
+  }
+
+
   delay(300);
   sensor_init();
   delay(100);
   esp_sleep_config_low_power();
   check_wakeup_reason();
+
+  // if(myIntent == ACTUATE_INTENT) {
+  //   actuatePump();
+  // }
 
   // should disable max chip on startup;
   disableMAX485();
