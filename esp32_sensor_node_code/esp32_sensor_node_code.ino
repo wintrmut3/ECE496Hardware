@@ -28,6 +28,9 @@
 #include <driver/adc.h>
 #include <esp_wifi.h>
 #include <ModbusMaster.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+#include <Wire.h>
 
 /**************************************************************************************************************************************************************/
 //                                                          GLOBAL DECLARATIONS AND INITIALIZATIONS
@@ -49,18 +52,24 @@
 #define actuateWakeUp 33
 #define SAMPLE_SIZE 32 //size of the datapacket to be sent at once, so that data is not lost in fragmentation
 #define AIR_TEMP 1
-#define ACTUATE_INTENT 0xFF
+#define ACTUATE_INTENT 0x05
+#define I2C_SDA 23
+#define I2C_SCL 21
 
 //Timeout Configuration
 #define uS_TO_S_MULTIPLIER 1000000  
 #define TIMEOUT_LIGHT_SLEEP  60 //change TIMEOUT_LIGHT_SLEEP for setting timeout in secs 
 #define SENSOR_TIMEOUT 15000
 
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+#define ACTUATE_TIME 2000
+
 
 // Create instances of OneWire and DallasTemperature classes
 OneWire oneWire(ONE_WIRE_BUS);
 DallasTemperature sensors(&oneWire);
-
+Adafruit_SSD1306 oled(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
 
 // Global variables
 uint8_t dataBufferSize = 0;     // Size of the packet
@@ -70,6 +79,7 @@ volatile bool isTransmitPhase = false;  // Flag indicating to make data transmis
 unsigned int collectionCounter = 2;  // Counter for data collection, change to UINT_MAX for continuous collection
 HardwareSerial SerialPort(1);
 ModbusMaster node;
+uint8_t myIntent = 0;
 
 
 xTaskHandle xCollectionTask;   // Task handle for collecting data
@@ -78,7 +88,7 @@ xTaskHandle xTransmissionTask;   // Task handle for transmiting data
 // Task Declarations
 void TransmitLocalData(void *pvParameters);
 void CollectLocalData(void *pvParameters);
-void actuatePump();
+// void actuatePump();
 
 /**************************************************************************************************************************************************************/
 //                                                                  End of Declarations
@@ -91,12 +101,13 @@ void actuatePump();
 /**************************************************************************************************************************************************************/
 //                                                                    HELPER FUNCTIONS
 /**************************************************************************************************************************************************************/
-void actuatePump() {
-  Serial.println("Actuating Pump");
-  pinMode(32, OUTPUT);
-  digitalWrite(32, HIGH);
-  delay(3000);
-  digitalWrite(32, LOW);
+void actuatePump(uint8_t pin, uint8_t time_frac_16) {
+  Serial.println("Actuating for ");
+  Serial.print(ACTUATE_TIME/16 * time_frac_16);
+  pinMode(pin, OUTPUT);
+  digitalWrite(pin, HIGH);
+  delay(ACTUATE_TIME/16 * time_frac_16);
+  digitalWrite(pin, LOW);
 }
 
 // This function will convert any datatype to byte packets to transmit using UART
@@ -165,7 +176,7 @@ void esp_sleep_config_low_power()
     gpio_pulldown_en((gpio_num_t)actuateWakeUp);
 
     gpio_wakeup_enable((gpio_num_t)ccReqData, GPIO_INTR_HIGH_LEVEL);
-    esp_sleep_enable_ext1_wakeup(GPIO_SEL_33 | GPIO_SEL_27, ESP_EXT1_WAKEUP_ANY_HIGH);
+    esp_sleep_enable_ext1_wakeup(GPIO_SEL_27, ESP_EXT1_WAKEUP_ANY_HIGH);
 
 
     esp_sleep_enable_gpio_wakeup();
@@ -192,7 +203,7 @@ uint8_t datacollect(float *humidity, float *soilTemperature, float *conductivity
 
   if(AIR_TEMP) {
     // Collecting Dallas OneWire Temperature Sensor Data
-      sensors.requestTemperatures(); 
+    sensors.requestTemperatures(); 
     *temperature=((float)sensors.getTempCByIndex(0));
   }
   else {
@@ -219,12 +230,12 @@ uint8_t datacollect(float *humidity, float *soilTemperature, float *conductivity
       *phosphorus = ((float)node.getResponseBuffer(0x05));
       *potassium = ((float)node.getResponseBuffer(0x06));
       
-      if(*soilTemperature>0)
+      if(*pH>3 || (*soilTemperature != 0 && ((millis()-start) > SENSOR_TIMEOUT/2))) // Last thing to stabilize at ~15 seconds -- should get more consecutive readings
       {
         Serial.println(F("Success, Received data"));
         break;
       }
-      else delay(500);//wait for the sensor to bootup and load the values
+      else delay(100);//wait for the sensor to bootup and load the values
     }
     else{
       Serial.println(result);
@@ -257,7 +268,7 @@ void check_wakeup_reason(){
       wakeupBit = esp_sleep_get_ext1_wakeup_status();
       if (wakeupBit & GPIO_SEL_33) {
         Serial.println("Selected pin 33");
-        actuatePump();
+        // actuatePump();
       }
       else if (wakeupBit & GPIO_SEL_27) {
         Serial.println("collection phase TRUE");
@@ -331,34 +342,37 @@ void postTransmission()
 
 void setup() {
   SerialPort.begin(9600, SERIAL_8N1, ccRx, ccTx);
-  pinMode(32, OUTPUT); // Actuation transistor output
+  // pinMode(32, OUTPUT); // Actuation transistor output
   // delay(100);
   Serial.begin(115200);
+  Wire.begin(I2C_SDA, I2C_SCL);
   unsigned long startTime = millis();
-  uint8_t myIntent;
+  // uint8_t myIntent;
   Serial.println("Before Reading Intent");
-  while((unsigned long)(millis()-startTime) < 5000) {
+  while((unsigned long)(millis()-startTime) < 3000) {
     // Serial.print("time: ");
     // Serial.println(millis()-startTime);
     if(SerialPort.available()) {
       myIntent = (byte)SerialPort.read();
       Serial.print("Intent: ");
-      Serial.println(myIntent, HEX);
+      Serial.println(myIntent, HEX); 
       break;
     }
     delay(10);
   }
 
-
+  if (!oled.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
+    Serial.println(F("SSD1306 allocation failed"));
+    while (true);
+  } 
+  
+  oled.clearDisplay(); //clear display
   delay(300);
   sensor_init();
   delay(100);
   esp_sleep_config_low_power();
   check_wakeup_reason();
 
-  // if(myIntent == ACTUATE_INTENT) {
-  //   actuatePump();
-  // }
 
   // should disable max chip on startup;
   disableMAX485();
@@ -417,6 +431,16 @@ void TransmitLocalData(void * pvParameters)
       if(collectionCounter<=0){
         Serial.println(F("Message Sent Going to deep sleep now"));
         Serial.flush();
+        if(myIntent != 0) {
+          // Extract a and b from c
+          uint8_t a = (myIntent >> 4) & 0xF;
+          uint8_t b = myIntent & 0xF;
+          Serial.println("Actuating first pump");
+          actuatePump(18, a);
+          Serial.println("Actuating second pump");
+          actuatePump(19, b);
+          myIntent = 0;
+        }
         send_esp_to_deep_sleep();
       }
       else{
@@ -431,6 +455,56 @@ void TransmitLocalData(void * pvParameters)
 
   }
   
+}
+
+void displayReading(float hum, float stemp, float cond, float temp, float pH, float nitrogen,float phosphorus, float potassium) {
+  // Display values on OLED
+            oled.clearDisplay(); //clear display
+            oled.setTextSize(1);          // text size
+            oled.setTextColor(WHITE);     // text color
+            oled.setCursor(0, 0);
+            oled.println("Air temp ");
+            oled.setCursor(60, 0);
+            oled.println(temp);
+
+            oled.setCursor(0, 8);
+            oled.println("Soil temp");
+            oled.setCursor(60, 8);
+            oled.println(stemp);
+
+            oled.setCursor(0, 16);
+            oled.println("Humidity");
+            oled.setCursor(60, 16);
+            oled.println(hum);
+
+            oled.setCursor(0, 24);
+            oled.println("cond");
+            oled.setCursor(60, 24);
+            oled.println(cond);
+
+            oled.setCursor(0, 32);
+            oled.println("pH ");
+            oled.setCursor(60, 32);
+            oled.println(pH);
+
+            oled.setCursor(0, 40);
+            oled.println("N");
+            oled.setCursor(60, 40);
+            oled.println(nitrogen);
+
+            oled.setCursor(0, 48);
+            oled.println("P");
+            oled.setCursor(60, 48);
+            oled.println(phosphorus);
+
+            oled.setCursor(0, 56);
+            oled.println("K");
+            oled.setCursor(60, 56);
+            oled.println(potassium);
+
+            oled.display();
+
+
 }
 
 
@@ -489,6 +563,7 @@ void CollectLocalData(void * pvParameters)
                     xQueueSendToBack(msg_queue, &phosphorus, (TickType_t)0);
                     xQueueSendToBack(msg_queue, &potassium, (TickType_t)0);
                     dataBufferSize+=32;
+                    displayReading(hum, stemp, cond, temp, pH, nitrogen, phosphorus, potassium);
                     break;
                 }
             
@@ -497,6 +572,8 @@ void CollectLocalData(void * pvParameters)
             else break;
           
           }
+
+
 
           isCollectionPhase=false;
           send_esp_to_light_sleep();
