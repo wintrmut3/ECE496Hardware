@@ -230,12 +230,18 @@ uint8_t datacollect(float *humidity, float *soilTemperature, float *conductivity
       *phosphorus = ((float)node.getResponseBuffer(0x05));
       *potassium = ((float)node.getResponseBuffer(0x06));
       
-      if(*pH>3 || (*soilTemperature != 0 && ((millis()-start) > SENSOR_TIMEOUT/2))) // Last thing to stabilize at ~15 seconds -- should get more consecutive readings
-      {
-        Serial.println(F("Success, Received data"));
-        break;
-      }
-      else delay(100);//wait for the sensor to bootup and load the values
+      // if(*pH>3 || (*soilTemperature != 0 && ((millis()-start) > SENSOR_TIMEOUT/2))) // Last thing to stabilize at ~15 seconds -- should get more consecutive readings
+      // {
+      //   Serial.println(F("Success, Received data"));
+      //   break;
+      // }
+      // if(*soilTemperature>0) // Last thing to stabilize at ~15 seconds -- should get more consecutive readings
+      // {
+      //   Serial.println(F("Success, Received data"));
+      //   break;
+      // }
+      // else delay(100);//wait for the sensor to bootup and load the values
+
     }
     else{
       Serial.println(result);
@@ -243,6 +249,7 @@ uint8_t datacollect(float *humidity, float *soilTemperature, float *conductivity
       Serial.flush();
       delay(500);//wait for the sensor to turn on
     }
+    delay(100);
   }
 
   disableSensor();
@@ -363,7 +370,9 @@ void setup() {
 
   if (!oled.begin(SSD1306_SWITCHCAPVCC, 0x3C)) {
     Serial.println(F("SSD1306 allocation failed"));
-    while (true);
+    while (true) {
+      Serial.println("SSD1306 allocation");
+    }
   } 
   
   oled.clearDisplay(); //clear display
@@ -372,7 +381,6 @@ void setup() {
   delay(100);
   esp_sleep_config_low_power();
   check_wakeup_reason();
-
 
   // should disable max chip on startup;
   disableMAX485();
@@ -437,6 +445,7 @@ void TransmitLocalData(void * pvParameters)
           uint8_t b = myIntent & 0xF;
           Serial.println("Actuating first pump");
           actuatePump(18, a);
+          delay(500);
           Serial.println("Actuating second pump");
           actuatePump(19, b);
           myIntent = 0;
@@ -503,8 +512,6 @@ void displayReading(float hum, float stemp, float cond, float temp, float pH, fl
             oled.println(potassium);
 
             oled.display();
-
-
 }
 
 
@@ -576,6 +583,7 @@ void CollectLocalData(void * pvParameters)
 
 
           isCollectionPhase=false;
+          Serial.println("Going to light sleep");
           send_esp_to_light_sleep();
           isTransmitPhase=true;
           vTaskResume(xTransmissionTask);
